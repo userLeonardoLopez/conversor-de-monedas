@@ -26,5 +26,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties!/.idea/discord.xml
-!/key.txt
-!/.idea/discord.xml
+/key.txt
+/.idea/discord.xml
+/.idea/inspectionProfiles/
