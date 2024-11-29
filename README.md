@@ -123,7 +123,12 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 ## 🛠️ Abra y ejecute el proyecto
 
-1. Una vez descargado, abra el **IntelliJ**.
+Antes de ejecutar, cree un archivo en la carpeta base del proyecto llamado **"key.txt"**.
+Posteriormente, copie y pegue su API Key dentro del archivo, y guarde los cambios.
+
+![image](https://github.com/user-attachments/assets/e62a54a8-2d20-4ce4-8861-0e30ebf12bad)
+
+1. Abra el **IntelliJ**.
 
 2. Abra el proyecto existente (seleccione la carpeta donde almacenó con Git este repositorio).
 
