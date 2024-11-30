@@ -35,9 +35,9 @@ Permite realizar conversiones bajo la despreocupación de divisas desactualizada
 
 Para poder utilizar el conversor, necesitará lo siguiente:
 
-  - [`Java Development Kit (JDK 21.0.5)`](#Instalar-Java-Development-Kit-(JDK-21.0.5))
-  - [`IntelliJ IDEA Community Edition`](#Instalar-IntelliJ-IDEA-Community-Edition)
-  - [`Un API Key de ExchangeRate-API`](#Generar-tu-propia-API-Key)
+  - [`Java Development Kit (JDK 21.0.5)`](#instalar-java-development-kit-jdk-2105)
+  - [`IntelliJ IDEA Community Edition`](#instalar-intellij-idea-community-edition)
+  - [`Un API Key de ExchangeRate-API`](#generar-su-propia-api-key)
 
 ¡Le tenemos cubierto! Siga las indicaciones debajo para ejecutar este programa en su equipo...
 
