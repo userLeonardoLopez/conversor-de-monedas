@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
+
+    private static final String OPCION_INVALIDA = "Opción inválida";
+
     public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
         boolean cerrarPrograma = false;
@@ -33,19 +36,21 @@ public class Principal {
                         opcionUsuario = validarOpcionInt(scan);
 
                         while (opcionUsuario < 1 || opcionUsuario > 2) {
-                            System.out.println("Opción inválida");
+                            System.out.println(OPCION_INVALIDA);
                             opcionUsuario = validarOpcionInt(scan);
                         }
                         if (opcionUsuario == 2) {
                             cerrarPrograma = true;
                         }
                     }
+                    System.out.println("¡Hasta luego!");
+                    break;
                 case 2:
                     System.out.println("¡Hasta luego!");
                     cerrarPrograma = true;
                     break;
                 default:
-                    System.out.println("Opción inválida");
+                    System.out.println(OPCION_INVALIDA);
                     opcionUsuario = validarOpcionInt(scan);
             }
         }
@@ -82,7 +87,7 @@ public class Principal {
                 opcionesUsuario.add(opcionUsuario - 1);
                 contador++;
             } else {
-                System.out.println("Opción inválida");
+                System.out.println(OPCION_INVALIDA);
             }
         }
 

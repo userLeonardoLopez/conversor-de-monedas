@@ -21,7 +21,7 @@ public class Conversion {
         this.tasaDeConversion = Double.parseDouble(conversionApi.conversionRate());
         this.monto = monto;
         this.resultado = (this.monto
-                .multiply(new BigDecimal(this.tasaDeConversion))
+                .multiply(BigDecimal.valueOf(this.tasaDeConversion))
                         .setScale(2, RoundingMode.DOWN));
     }
 

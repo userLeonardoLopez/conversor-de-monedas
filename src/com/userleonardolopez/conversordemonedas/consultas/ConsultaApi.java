@@ -4,6 +4,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.userleonardolopez.conversordemonedas.calculos.Conversion;
+import com.userleonardolopez.conversordemonedas.infra.exceptions.RespuestaApiException;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -21,19 +22,22 @@ public class ConsultaApi {
         //Lectura de la API Key
         Path myKey = Path.of("key.txt");
         String content = Files.readString(myKey);
-        String url = String.format("https://v6.exchangerate-api.com/v6/%s/pair/" + monedaOrigen + "/" + monedaDestino, content);
+        String url = String.format("https://v6.exchangerate-api.com/v6/%s/pair/%s/%s", content, monedaOrigen, monedaDestino);
+
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .build();
 
         HttpResponse<String> response = null;
         try {
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(url))
-                    .build();
             response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (Exception e) {
-            System.out.println("No se pudo elaborar la URI");
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RespuestaApiException(e.getMessage());
         }
+
         Gson gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                 .create();
